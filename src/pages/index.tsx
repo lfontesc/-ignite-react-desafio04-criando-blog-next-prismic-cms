@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
-import { getPrismicClient } from '../services/prismic';
+// import { getPrismicClient } from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
 import styles from './home.module.scss';
@@ -24,13 +25,28 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-// export default function Home() {
-//   // TODO
-// }
+export default function Home({ postsPagination }: HomeProps): JSX.Element {
+  return (
+    <>
+      <Head>
+        <title>Home | SpaceTraveling</title>
+      </Head>
+      <main className={styles.container}>
+        <h1>Olá Mundo</h1>
+      </main>
+    </>
+  );
+  // TODO
+}
 
-// export const getStaticProps = async () => {
-//   // const prismic = getPrismicClient({});
-//   // const postsResponse = await prismic.getByType(TODO);
-
-//   // TODO
-// };
+export const getStaticProps: GetStaticProps = async () => {
+  console.log('teste');
+  // const prismic = getPrismicClient({});
+  // const postsResponse = await prismic.getByType(TODO);
+  // TODO
+  return {
+    props: {
+      a: 1,
+    },
+  };
+};
