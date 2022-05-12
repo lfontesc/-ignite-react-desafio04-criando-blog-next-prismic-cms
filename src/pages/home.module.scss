@@ -1,4 +1,43 @@
 // TODO
 .container {
-  max-width: 1120px;
+}
+
+.posts {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.postInfo {
+  margin-bottom: 3rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  h2 {
+    line-height: 34px;
+    font-weight: 700;
+  }
+
+  span {
+    margin-top: 0.5rem;
+    color: var(--body);
+  }
+
+  .infoPublication {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.loadMore {
+  color: var(--highlight);
+  background-color: var(--background);
+  border: none;
+  font-weight: 600;
+  line-height: 22px;
+  cursor: pointer;
+  margin-top: 1rem;
 }

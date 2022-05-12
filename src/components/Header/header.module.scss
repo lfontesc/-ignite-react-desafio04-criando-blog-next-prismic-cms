@@ -1,1 +1,15 @@
-// TODO
+.containerHeader {
+  height: 105px;
+}
+
+.headerContent {
+  width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 105px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
