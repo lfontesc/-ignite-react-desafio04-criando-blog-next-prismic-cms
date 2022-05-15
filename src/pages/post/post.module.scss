@@ -4,3 +4,49 @@
   height: 25rem;
   object-fit: cover;
 }
+
+.container {
+  width: 720px;
+  margin: 5rem auto;
+}
+
+.postInfo {
+  margin-bottom: 3rem;
+
+  h2 {
+    line-height: 34px;
+    font-weight: 700;
+  }
+
+  span {
+    margin-top: 0.5rem;
+    color: var(--body);
+  }
+
+  .infoPublication {
+    color: var(--info);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.postContent {
+  .postSection {
+    color: var(--body);
+  }
+
+  p,
+  ul {
+    margin: 1.5rem 0;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+}

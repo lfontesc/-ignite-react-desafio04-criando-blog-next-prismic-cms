@@ -41,17 +41,11 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
         const newPosts = data.results.map(post => {
           return {
             uid: post.uid,
-            first_publication_date: format(
-              new Date(post.first_publication_date),
-              'dd MMM yyyy',
-              {
-                locale: ptBR,
-              }
-            ),
+            first_publication_date: post.first_publication_date,
             data: {
-              title: RichText.asText(post.data.title),
-              subtitle: RichText.asText(post.data.subtitle),
-              author: RichText.asText(post.data.author),
+              title: post.data.title,
+              subtitle: post.data.subtitle,
+              author: post.data.author,
             },
           };
         });
@@ -66,7 +60,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
       <Head>
         <title>Home | SpaceTraveling</title>
       </Head>
-      <main className={styles.container}>
+      <main className={commonStyles.container}>
         <section className={styles.posts}>
           {posts.map(post => {
             return (
@@ -76,7 +70,16 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
                   <span>{post.data.subtitle}</span>
                   <div className={styles.infoPublication}>
                     <div>
-                      <FiUser /> {post.first_publication_date}
+                      <FiUser />{' '}
+                      <time>
+                        {format(
+                          new Date(post.first_publication_date),
+                          'dd MMM yyyy',
+                          {
+                            locale: ptBR,
+                          }
+                        )}
+                      </time>
                     </div>
                     <div>
                       <FiCalendar /> {post.data.author}
@@ -111,17 +114,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const results = postsResponse.results.map(post => {
     return {
       uid: post.uid,
-      first_publication_date: format(
-        new Date(post.first_publication_date),
-        'dd MMM yyyy',
-        {
-          locale: ptBR,
-        }
-      ),
+      first_publication_date: post.first_publication_date,
       data: {
-        title: RichText.asText(post.data.title),
-        subtitle: RichText.asText(post.data.subtitle),
-        author: RichText.asText(post.data.author),
+        title: post.data.title,
+        subtitle: post.data.subtitle,
+        author: post.data.author,
       },
     };
   });
